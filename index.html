@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <!-- Custom CSS -->
+      <link type="text/css" rel="stylesheet" href="calculator.css" />
+      <!-- CSS font -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+      <!-- Material Design Lite CDN -->
+      <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.5/material.deep_purple-purple.min.css" /> 
+      <title>Calculator</title>
+   </head>
+   <body>
+   <div class="calc-container mdl-shadow--2dp">
+      <div id="history"></div>
+      <div class="mdl-grid">    
+          <div class="mdl-cell mdl-cell--8-col suspended" id="result-frame">
+              <div id="result"></div>
+          </div>
+      </div>
+      <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--6-col calButton"> AC </div>  
+          <div class="mdl-cell mdl-cell--2-col calButton"> &#247 </div>
+      </div>
+      <div class="mdl-grid">               
+          <div class="mdl-cell mdl-cell--2-col calButton number"> 7 </div>  
+          <div class="mdl-cell mdl-cell--2-col calButton number"> 8 </div>
+          <div class="mdl-cell mdl-cell--2-col calButton number"> 9 </div>
+          <div class="mdl-cell mdl-cell--2-col calButton "> x </div>
+      </div>
+      <div class="mdl-grid"> 
+         <div class="mdl-cell mdl-cell--2-col calButton number"> 4 </div>
+         <div class="mdl-cell mdl-cell--2-col calButton number"> 5 </div>
+         <div class="mdl-cell mdl-cell--2-col calButton number"> 6 </div>
+         <div class="mdl-cell mdl-cell--2-col calButton"> x<sup>y </sup></div>
+      </div>
+      <div class="mdl-grid"> 
+         <div class="mdl-cell mdl-cell--2-col calButton number"> 1 </div>
+         <div class="mdl-cell mdl-cell--2-col calButton number"> 2 </div>
+         <div class="mdl-cell mdl-cell--2-col calButton number"> 3 </div>
+         <div class="mdl-cell mdl-cell--2-col calButton"> - </div>
+      </div>
+      <div class="mdl-grid">       
+         <div class="mdl-cell mdl-cell--2-col calButton number"> 0 </div>
+         <div class="mdl-cell mdl-cell--2-col calButton number"> . </div>
+         <div class="mdl-cell mdl-cell--2-col calButton" id="equals"> = </div>
+         <div class="mdl-cell mdl-cell--2-col calButton"> + </div>
+      </div>
+   </div>
+   </body>
+   <script type="text/javascript" src="calculate.js"></script>
+</html>
