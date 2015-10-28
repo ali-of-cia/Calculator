@@ -24,7 +24,7 @@ function writeEquation (evt)
    var notNum = isNaN(newVal);
    var rf = document.getElementById("result-frame");
 
-   if (newVal == "AC")
+   if (newVal === "AC")
    {
        clear();
        rf.className = "mdl-cell mdl-cell--8-col suspended";
@@ -35,12 +35,12 @@ function writeEquation (evt)
    rf.className = "mdl-cell mdl-cell--8-col inprogress";
 
    /* Change unicode and subscript characters of power and division */
-   if (newVal == "\u00F7")
+   if (newVal === "\u00F7")
    {
        newVal = "\\";
        prettyVal = "\u00F7"
    }
-   if (newVal == "xy")
+   if (newVal === "xy")
    {
        newVal = "^";
        prettyVal = "^";
@@ -64,13 +64,19 @@ function writeEquation (evt)
    var lastNotNum = isNaN(lastVal);
 
    /* You cannot have a decimal point after an operator */
-   if ( newVal == "."  && lastNotNum === true)
+   if ( newVal === "."  && lastNotNum === true)
+   {
+       return;
+   }
+
+   /* Prevent operators from being clicked after operators */
+   if ( notNum === true  && lastNotNum === true)
    {
        return;
    }
 
    /* Don't allow divide by zero */
-   if (newVal === "0" && lastVal == "/")
+   if (newVal === "0" && lastVal === "/")
    {
        alert("You cannot divide by zero.");
        return;
@@ -88,7 +94,7 @@ function writeEquation (evt)
        return;
     }
    /* Format equation for number vs operator clicked */
-   if (lastNotNum == notNum || (lastNotNum === false && newVal == ".") || (lastVal == "." && notNum === false ))
+   if (lastNotNum === notNum || (lastNotNum === false && newVal === ".") || (lastVal === "." && notNum === false ))
    {
       equation += newVal;
       prettyEquation += prettyVal;
@@ -188,7 +194,7 @@ function calculate(postFix)
          {
             result.push(parseFloat(b,10) / parseFloat(a,10));
          }
-         else if(postFix[i] == "^")
+         else if(postFix[i] === "^")
          {
             var total = 1;
             for(var i = 1; i <= a; i++)
